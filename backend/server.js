@@ -5,13 +5,12 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const connectDB = require("./config/db");
-console.log("connectDB =", connectDB);
 
 connectDB();
 
 const app = express();
 
-app.use(cors(origin="https://sample-application-tau.vercel.app/"));
+app.use(cors());
 app.use(express.json());
 
 app.use((err, req, res, next) => {
